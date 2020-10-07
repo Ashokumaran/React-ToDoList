@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { FcRotateToLandscape } from "react-icons/fc";
-import TodoFilter from "./TodoFilter";
-import TodoInput from "./TodoInput";
-import TodoList from "./TodoList";
-import TodoStatus from "./TodoStatus";
+import TodoFilter from "./TodoFilter.js";
+import TodoInput from "./TodoInput.js";
+import TodoList from "./TodoList.js";
+import TodoStatus from "./TodoStatus.js";
 
 function Todo() {
   const [todos, setTodos] = useState([]);

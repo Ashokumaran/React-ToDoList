@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import Todo from "./component/Todo"
+import Todo from "./component/Todo.js"
 
 const App = () => {
   return (

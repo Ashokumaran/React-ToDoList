@@ -121182,13 +121182,13 @@ var _react = _interopRequireWildcard(require("react"));
 
 var _fc = require("react-icons/fc");
 
-var _TodoFilter = _interopRequireDefault(require("./TodoFilter"));
+var _TodoFilter = _interopRequireDefault(require("./TodoFilter.js"));
 
-var _TodoInput = _interopRequireDefault(require("./TodoInput"));
+var _TodoInput = _interopRequireDefault(require("./TodoInput.js"));
 
-var _TodoList = _interopRequireDefault(require("./TodoList"));
+var _TodoList = _interopRequireDefault(require("./TodoList.js"));
 
-var _TodoStatus = _interopRequireDefault(require("./TodoStatus"));
+var _TodoStatus = _interopRequireDefault(require("./TodoStatus.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -121338,7 +121338,7 @@ function Todo() {
 
 var _default = Todo;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","react-icons/fc":"node_modules/react-icons/fc/index.esm.js","./TodoFilter":"src/component/TodoFilter.js","./TodoInput":"src/component/TodoInput.js","./TodoList":"src/component/TodoList.js","./TodoStatus":"src/component/TodoStatus.js"}],"src/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-icons/fc":"node_modules/react-icons/fc/index.esm.js","./TodoFilter.js":"src/component/TodoFilter.js","./TodoInput.js":"src/component/TodoInput.js","./TodoList.js":"src/component/TodoList.js","./TodoStatus.js":"src/component/TodoStatus.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -121348,7 +121348,7 @@ exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
 
-var _Todo = _interopRequireDefault(require("./component/Todo"));
+var _Todo = _interopRequireDefault(require("./component/Todo.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -121364,19 +121364,19 @@ var App = function App() {
 
 var _default = App;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./component/Todo":"src/component/Todo.js"}],"src/index.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","./component/Todo.js":"src/component/Todo.js"}],"src/index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
 
 var _reactDom = _interopRequireDefault(require("react-dom"));
 
-var _App = _interopRequireDefault(require("./App"));
+var _App = _interopRequireDefault(require("./App.js"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom.default.render( /*#__PURE__*/_react.default.createElement(_App.default, null), document.querySelector("#root"));
-},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./App":"src/App.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-dom":"node_modules/react-dom/index.js","./App.js":"src/App.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
