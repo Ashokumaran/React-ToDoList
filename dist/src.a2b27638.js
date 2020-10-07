@@ -28285,104 +28285,7 @@ if ("development" === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"src/component/TodoInput.js":[function(require,module,exports) {
-"use strict";
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
-
-var _react = _interopRequireWildcard(require("react"));
-
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
-
-function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
-
-function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
-
-function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
-
-function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
-
-function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
-
-function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
-
-function TodoInput(props) {
-  //initizaling the input
-  var _useState = (0, _react.useState)(""),
-      _useState2 = _slicedToArray(_useState, 2),
-      input = _useState2[0],
-      setInput = _useState2[1];
-
-  var _useState3 = (0, _react.useState)("LOW"),
-      _useState4 = _slicedToArray(_useState3, 2),
-      priority = _useState4[0],
-      setPriority = _useState4[1];
-
-  var handleSubmit = function handleSubmit(event) {
-    //prevent default submission
-    event.preventDefault(); //re-initialize the input
-
-    setInput("");
-  }; //update input
-
-
-  var updateInput = function updateInput(event) {
-    return setInput(event.target.value);
-  }; //add todo
-
-
-  var submitClicked = function submitClicked() {
-    if (input) {
-      props.addTodo(input, priority);
-    }
-
-    setInput("");
-    setPriority("LOW");
-  };
-
-  return /*#__PURE__*/_react.default.createElement("div", {
-    className: "input-section"
-  }, /*#__PURE__*/_react.default.createElement("form", {
-    className: "todo-form mt-3  input-group",
-    onSubmit: handleSubmit
-  }, /*#__PURE__*/_react.default.createElement("input", {
-    type: "text",
-    placeholder: "Add a todo",
-    value: input,
-    name: "text",
-    className: "todo-input form-control",
-    onChange: updateInput
-  }), /*#__PURE__*/_react.default.createElement("select", {
-    className: "ml-2 btn btn-sm btn-dark"
-  }, /*#__PURE__*/_react.default.createElement("option", {
-    value: "low",
-    onClick: function onClick() {
-      return setPriority("LOW");
-    }
-  }, "LOW"), /*#__PURE__*/_react.default.createElement("option", {
-    value: "mid",
-    onClick: function onClick() {
-      return setPriority("MID");
-    }
-  }, "MID"), /*#__PURE__*/_react.default.createElement("option", {
-    value: "high",
-    onClick: function onClick() {
-      return setPriority("HIGH");
-    }
-  }, "HIGH")), /*#__PURE__*/_react.default.createElement("button", {
-    className: "btn ml-2 btn-sm btn-dark todo-button",
-    onClick: submitClicked
-  }, "Add todo")));
-}
-
-var _default = TodoInput;
-exports.default = _default;
-},{"react":"node_modules/react/index.js"}],"node_modules/react-icons/lib/esm/iconsManifest.js":[function(require,module,exports) {
+},{"./cjs/react-dom.development.js":"node_modules/react-dom/cjs/react-dom.development.js"}],"node_modules/react-icons/lib/esm/iconsManifest.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -47710,7 +47613,131 @@ function FcWorkflow(props) {
 }
 
 ;
-},{"../lib":"node_modules/react-icons/lib/esm/index.js"}],"node_modules/react-icons/gr/index.esm.js":[function(require,module,exports) {
+},{"../lib":"node_modules/react-icons/lib/esm/index.js"}],"src/component/TodoFilter.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireDefault(require("react"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function TodoFilter(props) {
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "mt-3  todo-filter-appending"
+  }, props.results.map(function (task, index) {
+    return /*#__PURE__*/_react.default.createElement("ul", {
+      class: "list-group",
+      key: index
+    }, /*#__PURE__*/_react.default.createElement("li", {
+      class: "list-group-item"
+    }, task.name));
+  }));
+}
+
+var _default = TodoFilter;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"src/component/TodoInput.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
+
+var _react = _interopRequireWildcard(require("react"));
+
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { if (typeof Symbol === "undefined" || !(Symbol.iterator in Object(arr))) return; var _arr = []; var _n = true; var _d = false; var _e = undefined; try { for (var _i = arr[Symbol.iterator](), _s; !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function TodoInput(props) {
+  //initizaling the input
+  var _useState = (0, _react.useState)(""),
+      _useState2 = _slicedToArray(_useState, 2),
+      input = _useState2[0],
+      setInput = _useState2[1];
+
+  var _useState3 = (0, _react.useState)("LOW"),
+      _useState4 = _slicedToArray(_useState3, 2),
+      priority = _useState4[0],
+      setPriority = _useState4[1];
+
+  var handleSubmit = function handleSubmit(event) {
+    //prevent default submission
+    event.preventDefault(); //re-initialize the input
+
+    setInput("");
+  }; //update input
+
+
+  var updateInput = function updateInput(event) {
+    return setInput(event.target.value);
+  }; //add todo
+
+
+  var submitClicked = function submitClicked() {
+    if (input) {
+      props.addTodo(input, priority);
+    }
+
+    setInput("");
+    setPriority("LOW");
+  };
+
+  return /*#__PURE__*/_react.default.createElement("div", {
+    className: "input-section"
+  }, /*#__PURE__*/_react.default.createElement("form", {
+    className: "todo-form mt-3  input-group",
+    onSubmit: handleSubmit
+  }, /*#__PURE__*/_react.default.createElement("input", {
+    type: "text",
+    placeholder: "Add a todo",
+    value: input,
+    name: "text",
+    className: "todo-input form-control",
+    onChange: updateInput
+  }), /*#__PURE__*/_react.default.createElement("select", {
+    className: "ml-2 btn btn-sm btn-dark"
+  }, /*#__PURE__*/_react.default.createElement("option", {
+    value: "low",
+    onClick: function onClick() {
+      return setPriority("LOW");
+    }
+  }, "LOW"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "mid",
+    onClick: function onClick() {
+      return setPriority("MID");
+    }
+  }, "MID"), /*#__PURE__*/_react.default.createElement("option", {
+    value: "high",
+    onClick: function onClick() {
+      return setPriority("HIGH");
+    }
+  }, "HIGH")), /*#__PURE__*/_react.default.createElement("button", {
+    className: "btn ml-2 btn-sm btn-dark todo-button",
+    onClick: submitClicked
+  }, "Add todo")));
+}
+
+var _default = TodoInput;
+exports.default = _default;
+},{"react":"node_modules/react/index.js"}],"node_modules/react-icons/gr/index.esm.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -121033,9 +121060,7 @@ function TodoList(props) {
       props.toggleTodo(index);
     };
 
-    props.items.map(function (task, index) {
-      if (task.priorityStatus == "LOW") task.priorityStatus = /*#__PURE__*/_react.default.createElement(_fc.FcLowPriority, null);else if (task.priorityStatus == "MID") task.priorityStatus = /*#__PURE__*/_react.default.createElement(_fc.FcMediumPriority, null);else if (task.priorityStatus == "HIGH") task.priorityStatus = /*#__PURE__*/_react.default.createElement(_fc.FcHighPriority, null);
-    });
+    if (task.priorityStatus == "LOW") task.priorityStatus = /*#__PURE__*/_react.default.createElement(_fc.FcLowPriority, null);else if (task.priorityStatus == "MID") task.priorityStatus = /*#__PURE__*/_react.default.createElement(_fc.FcMediumPriority, null);else if (task.priorityStatus == "HIGH") task.priorityStatus = /*#__PURE__*/_react.default.createElement(_fc.FcHighPriority, null);
 
     var removeToDo = function removeToDo() {
       props.removeToDo(index);
@@ -121069,7 +121094,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 
 var _fc = require("react-icons/fc");
 
@@ -121077,7 +121102,9 @@ var _gr = require("react-icons/gr");
 
 var _ri = require("react-icons/ri");
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function () { return cache; }; return cache; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function TodoStatus(props) {
   var lowPriorityToDos = props.items.filter(function (task, index) {
@@ -121095,34 +121122,50 @@ function TodoStatus(props) {
   var incompleteTodos = props.items.filter(function (task, index) {
     return task.isDone == false;
   }).length;
-  return /*#__PURE__*/_react.default.createElement("div", {
+
+  var onClicker = function onClicker(event) {
+    var filterValue = event.target.value;
+    props.filterToDo(filterValue);
+  };
+
+  return /*#__PURE__*/_react.default.createElement(_react.Fragment, null, /*#__PURE__*/_react.default.createElement("div", {
     className: "todo-status-appending mt-3"
   }, /*#__PURE__*/_react.default.createElement("div", {
     className: "btn-group btn-group-toggle",
     "data-toggle": "buttons"
   }, /*#__PURE__*/_react.default.createElement("button", {
-    className: "btn btn-sm btn-dark btn-size"
+    className: "btn btn-sm btn-dark btn-size",
+    value: "low",
+    onClick: onClicker
   }, /*#__PURE__*/_react.default.createElement(_fc.FcLowPriority, null), " Low", /*#__PURE__*/_react.default.createElement("span", {
     className: "badge badge-light"
   }, lowPriorityToDos)), /*#__PURE__*/_react.default.createElement("button", {
-    className: "btn btn-sm btn-dark btn-size"
+    className: "btn btn-sm btn-dark btn-size",
+    value: "mid",
+    onClick: onClicker
   }, /*#__PURE__*/_react.default.createElement(_fc.FcMediumPriority, null), " Mid", /*#__PURE__*/_react.default.createElement("span", {
     className: "badge badge-light"
   }, medPriorityToDos)), /*#__PURE__*/_react.default.createElement("button", {
-    className: "btn btn-sm btn-dark btn-size"
+    className: "btn btn-sm btn-dark btn-size",
+    value: "high",
+    onClick: onClicker
   }, /*#__PURE__*/_react.default.createElement(_fc.FcHighPriority, null), " High", /*#__PURE__*/_react.default.createElement("span", {
     className: "badge badge-light"
   }, highPriorityToDos)), /*#__PURE__*/_react.default.createElement("div", {
     className: "dropdown-divider"
   }), /*#__PURE__*/_react.default.createElement("button", {
-    className: "btn btn-sm btn-success btn-size"
+    className: "btn btn-sm btn-success btn-size",
+    value: "done",
+    onClick: onClicker
   }, /*#__PURE__*/_react.default.createElement(_gr.GrStatusGood, null), " Done", /*#__PURE__*/_react.default.createElement("span", {
     className: "badge badge-light"
   }, completedTodos)), /*#__PURE__*/_react.default.createElement("button", {
-    className: "btn btn-sm btn-danger btn-size"
+    className: "btn btn-sm btn-danger btn-size",
+    value: "pending",
+    onClick: onClicker
   }, /*#__PURE__*/_react.default.createElement(_ri.RiErrorWarningFill, null), " Pending", /*#__PURE__*/_react.default.createElement("span", {
     className: "badge badge-light"
-  }, incompleteTodos))));
+  }, incompleteTodos)))));
 }
 
 var _default = TodoStatus;
@@ -121136,6 +121179,10 @@ Object.defineProperty(exports, "__esModule", {
 exports.default = void 0;
 
 var _react = _interopRequireWildcard(require("react"));
+
+var _fc = require("react-icons/fc");
+
+var _TodoFilter = _interopRequireDefault(require("./TodoFilter"));
 
 var _TodoInput = _interopRequireDefault(require("./TodoInput"));
 
@@ -121183,7 +121230,6 @@ function Todo() {
 
 
   var addTodo = function addTodo(newtodo, priority) {
-    console.log(newtodo, priority);
     setTodos([].concat(_toConsumableArray(todos), [{
       name: newtodo,
       isDone: false,
@@ -121211,7 +121257,63 @@ function Todo() {
     }));
   };
 
+  var _useState3 = (0, _react.useState)([]),
+      _useState4 = _slicedToArray(_useState3, 2),
+      result = _useState4[0],
+      setresult = _useState4[1];
+
   window.todos = todos;
+  var newToDo = todos;
+
+  var filterToDo = function filterToDo(filter) {
+    setresult([]);
+
+    if (filter == "low") {
+      setresult(newToDo.filter(function (todo, index) {
+        return todo.priorityStatus.type.name == "FcLowPriority";
+      }));
+    } else if (filter == "mid") {
+      setresult(newToDo.filter(function (todo, index) {
+        return todo.priorityStatus.type.name == "FcMediumPriority";
+      }));
+    } else if (filter == "high") {
+      setresult(newToDo.filter(function (todo, index) {
+        return todo.priorityStatus.type.name == "FcHighPriority";
+      }));
+    } else if (filter == "done") {
+      setresult(newToDo.filter(function (todo, index) {
+        return todo.isDone == true;
+      }));
+    } else if (filter == "pending") {
+      setresult(newToDo.filter(function (todo, index) {
+        return todo.isDone == false;
+      }));
+    }
+  }; // const filterToDo = (filter) => {
+  //     if(filter=="low"){
+  //       result = newToDo.filter((todo, index) => {
+  //       return todo.priorityStatus.type.name == "FcLowPriority";
+  //     })}
+  //     else if(filter=="mid"){
+  //       result = newToDo.filter((todo, index) => {
+  //       return todo.priorityStatus.type.name == "FcMediumPriority";
+  //     })}
+  //     else if(filter=="high"){
+  //       result = newToDo.filter((todo, index) => {
+  //       return todo.priorityStatus.type.name == "FcHighPriority";
+  //     })}
+  //     else if(filter=="done"){
+  //       result = newToDo.filter((todo, index) => {
+  //       return todo.isDone == true;
+  //     })}
+  //     else if(filter=="pending"){
+  //       result = newToDo.filter((todo, index) => {
+  //         return todo.isDone == false;
+  //       })}
+  //       result.map((e) => console.log(e.name))
+  // }
+
+
   return /*#__PURE__*/_react.default.createElement("div", {
     className: "mt-4 todo-design"
   }, /*#__PURE__*/_react.default.createElement("h1", null, "What's the plan for today?"), /*#__PURE__*/_react.default.createElement("div", {
@@ -121227,13 +121329,16 @@ function Todo() {
   })), /*#__PURE__*/_react.default.createElement("div", {
     className: "col-6 current-todo"
   }, /*#__PURE__*/_react.default.createElement(_TodoStatus.default, {
-    items: todos
+    items: todos,
+    filterToDo: filterToDo
+  }), /*#__PURE__*/_react.default.createElement(_TodoFilter.default, {
+    results: result
   }))));
 }
 
 var _default = Todo;
 exports.default = _default;
-},{"react":"node_modules/react/index.js","./TodoInput":"src/component/TodoInput.js","./TodoList":"src/component/TodoList.js","./TodoStatus":"src/component/TodoStatus.js"}],"src/App.js":[function(require,module,exports) {
+},{"react":"node_modules/react/index.js","react-icons/fc":"node_modules/react-icons/fc/index.esm.js","./TodoFilter":"src/component/TodoFilter.js","./TodoInput":"src/component/TodoInput.js","./TodoList":"src/component/TodoList.js","./TodoStatus":"src/component/TodoStatus.js"}],"src/App.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -121299,7 +121404,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64994" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49597" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

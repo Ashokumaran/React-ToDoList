@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FcRotateToLandscape } from "react-icons/fc";
+import TodoFilter from "./TodoFilter";
 import TodoInput from "./TodoInput";
 import TodoList from "./TodoList";
 import TodoStatus from "./TodoStatus";
@@ -8,7 +10,6 @@ function Todo() {
 
   //add todos
   const addTodo = (newtodo, priority) => {
-    console.log(newtodo, priority);
     setTodos([
       ...todos,
       {
@@ -18,7 +19,7 @@ function Todo() {
       },
     ]);
   };
-  
+
   //toggle completion status for todos
   const toggleTodo = (todoIndex) => {
     setTodos(
@@ -34,7 +35,6 @@ function Todo() {
     );
   };
 
-
   //delete todos
   const removeToDo = (todoIndex) => {
     setTodos(
@@ -43,7 +43,69 @@ function Todo() {
       })
     );
   };
-  window.todos=todos;
+  const [result, setresult] = useState([]);
+  window.todos = todos;
+
+  const newToDo = todos;
+
+  const filterToDo = (filter) => {
+    setresult([]);
+    if (filter == "low") {
+      setresult(
+        newToDo.filter((todo, index) => {
+          return todo.priorityStatus.type.name == "FcLowPriority";
+        })
+      );
+    } else if (filter == "mid") {
+      setresult(
+        newToDo.filter((todo, index) => {
+          return todo.priorityStatus.type.name == "FcMediumPriority";
+        })
+      );
+    } else if (filter == "high") {
+      setresult(
+        newToDo.filter((todo, index) => {
+          return todo.priorityStatus.type.name == "FcHighPriority";
+        })
+      );
+    } else if (filter == "done") {
+      setresult(
+        newToDo.filter((todo, index) => {
+          return todo.isDone == true;
+        })
+      );
+    } else if (filter == "pending") {
+      setresult(
+        newToDo.filter((todo, index) => {
+          return todo.isDone == false;
+        })
+      );
+    }
+  };
+  // const filterToDo = (filter) => {
+  //     if(filter=="low"){
+  //       result = newToDo.filter((todo, index) => {
+  //       return todo.priorityStatus.type.name == "FcLowPriority";
+  //     })}
+  //     else if(filter=="mid"){
+  //       result = newToDo.filter((todo, index) => {
+  //       return todo.priorityStatus.type.name == "FcMediumPriority";
+  //     })}
+  //     else if(filter=="high"){
+  //       result = newToDo.filter((todo, index) => {
+  //       return todo.priorityStatus.type.name == "FcHighPriority";
+  //     })}
+  //     else if(filter=="done"){
+  //       result = newToDo.filter((todo, index) => {
+  //       return todo.isDone == true;
+  //     })}
+  //     else if(filter=="pending"){
+  //       result = newToDo.filter((todo, index) => {
+  //         return todo.isDone == false;
+  //       })}
+
+  //       result.map((e) => console.log(e.name))
+  // }
 
   return (
     <div className="mt-4 todo-design">
@@ -58,7 +120,8 @@ function Todo() {
           />
         </div>
         <div className="col-6 current-todo">
-            <TodoStatus items={todos}/>
+          <TodoStatus items={todos} filterToDo={filterToDo} />
+          <TodoFilter results={result} />
         </div>
       </div>
     </div>

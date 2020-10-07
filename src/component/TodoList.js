@@ -11,14 +11,14 @@ function TodoList(props) {
                         props.toggleTodo(index);
                 }
 
-                props.items.map((task,index) => {
+                
                     if(task.priorityStatus=="LOW")
                     task.priorityStatus=<FcLowPriority />
                     else if(task.priorityStatus=="MID")
                     task.priorityStatus=<FcMediumPriority />
                     else if(task.priorityStatus=="HIGH")
                     task.priorityStatus=<FcHighPriority />
-                })
+                
                 
                 const removeToDo = () => {
                     props.removeToDo(index);

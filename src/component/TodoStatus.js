@@ -1,11 +1,11 @@
-import React from "react";
+import React,{Fragment} from "react";
 import {
   FcLowPriority,
   FcMediumPriority,
   FcHighPriority,
 } from "react-icons/fc";
 import {GrStatusGood} from 'react-icons/gr'
-import {RiErrorWarningFill,RiDeleteBin2Fill} from 'react-icons/ri'
+import {RiErrorWarningFill} from 'react-icons/ri'
 
 function TodoStatus(props) {
   const lowPriorityToDos = props.items.filter((task, index) => {
@@ -24,32 +24,40 @@ function TodoStatus(props) {
     return (task.isDone == false)
   }).length;
 
+
+  const onClicker = (event) => {
+    let filterValue = event.target.value;
+    props.filterToDo(filterValue);
+}
+
   return (
+    <Fragment>
     <div className="todo-status-appending mt-3">
       <div className="btn-group btn-group-toggle" data-toggle="buttons">
-        <button className="btn btn-sm btn-dark btn-size">
+        <button className="btn btn-sm btn-dark btn-size"  value="low" onClick={onClicker}>
         <FcLowPriority /> Low 
             <span className="badge badge-light">{lowPriorityToDos}</span>
         </button>
-        <button className="btn btn-sm btn-dark btn-size">
+        <button className="btn btn-sm btn-dark btn-size"  value="mid" onClick={onClicker}>
         <FcMediumPriority /> Mid
             <span className="badge badge-light">{medPriorityToDos}</span>
         </button>
-        <button className="btn btn-sm btn-dark btn-size">
+        <button className="btn btn-sm btn-dark btn-size"  value="high" onClick={onClicker}>
         <FcHighPriority /> High 
             <span className="badge badge-light">{highPriorityToDos}</span>
         </button>
         <div className="dropdown-divider"></div>
-        <button className="btn btn-sm btn-success btn-size">
+        <button className="btn btn-sm btn-success btn-size"  value="done" onClick={onClicker}>
         <GrStatusGood /> Done 
             <span className="badge badge-light">{completedTodos}</span>
         </button>
-        <button className="btn btn-sm btn-danger btn-size">
+        <button className="btn btn-sm btn-danger btn-size"  value="pending" onClick={onClicker}>
         <RiErrorWarningFill /> Pending 
             <span className="badge badge-light">{incompleteTodos}</span>
         </button>
       </div>  
     </div>
+    </Fragment>
   );
 }
 
